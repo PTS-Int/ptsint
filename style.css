@@ -1,0 +1,27 @@
+html, body {
+	margin: 0px;
+	width: 100%;
+}
+
+table, th, td, tr {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table {
+	width: 80%;
+	margin: 0px auto;
+	table-layout: fixed;
+}
+
+tr {
+	display: none;
+}
+
+.visible {
+	display: table-row;
+}
+.center {
+	text-align: center;
+}
