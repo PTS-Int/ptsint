@@ -15,13 +15,11 @@ table {
 	table-layout: fixed;
 }
 
-tr {
-	display: none;
+.selector {
+	margin: 10px auto;
+	text-align: center;
 }
 
-.visible {
-	display: table-row;
-}
 .center {
 	text-align: center;
 }
