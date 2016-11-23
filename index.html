@@ -1,45 +1,55 @@
 <html>
 	<body>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="jquery-1.12.0.min.js"></script>
-		<script src="script.js"></script>
-		<div id="head"><h1 class="center">Welcome to PTS-Int. Site<h1></div>
-		<div id="content">
-			<div id="contentTable">
-				<table>
+		<div id='head'><h1 class='center'>Welcome to PTS-Int. Site<h1></div>
+		<div id='content'>
+			<table>
+				<tbody>
 					<thead>
-						<tr id="transportType">
-							<th colspan="3"><a id="Bus" class="transportMain" href="#">รถเมล์</a></th>
-							<th colspan="3"><a id="Metro" class="transportMain" href="#">รถไฟฟ้า</a></th>
-							<th colspan="3"><a id="Boat" class="transportMain" href="#">เรือ</a></th>
-							<th colspan="3"><a id="Train" class="transportMain" href="#">รถไฟ</a></th>
+						<tr class='visible'>
+							<th colspan='3'><a href='#' onclick='openRow("Bus");'>รถเมล์</a></th>
+							<th colspan='3'><a href='#' onclick='openRow("Metro");'>รถไฟฟ้า</a></th>
+							<th colspan='3'><a href='#' onclick='openRow("Boat");'>เรือ</a></th>
+							<th colspan='3'><a href='#' onclick='openRow("Train");'>รถไฟ</a></th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr id="TransportBus">
-							<td colspan="4"><a id="RouteData" class="transportSub" href="#">ข้อมูลสายรถเมล์</a></td>
-							<td colspan="4"><a id="BusStopData" class="transportSub" href="#">ค้นหาสายรถเมล์จากป้าย</a></td>
-							<td colspan="4"><a id="TripData" class="transportSub" href="#">ค้นหาสายรถเมล์จากเส้นทาง</a></td>
-						</tr>
-						<tr id="TransportMetro">
-							<td colspan="4"><a class="transportSub" href="#">คำนวณเวลาและราคารถไฟฟ้า</a></td>
-							<td colspan="4"><a class="transportSub" href="#">ตารางความถี่รถไฟฟ้า</a></td>
-							<td colspan="4"><a class="transportSub" href="#">ตารางแสดงเวลารถไฟฟ้าขบวนแรก/สุดท้าย</a></td>
-						</tr>
-						<tr id="TransportBoat">
-							<td colspan="4"><a class="transportSub" href="#">คำนวณค่าโดยสารเรือ</a></td>
-							<td colspan="4"><a class="transportSub" href="#">ตารางแสดงเส้นทางการเดินเรือ</a></td>
-							<td colspan="4"><a class="transportSub" href="#">ตารางแสดงความถี่ของเรือตามช่วงเวลา</a></td>
-						</tr>
-						<tr id="TransportTrain">
-							<td colspan="4"><a class="transportSub" href="#">ตารางเวลารถไฟเข้า-ออก</a></td>
-							<td colspan="4"><a class="transportSub" href="#">กำหนดเวลาเดินขบวนรถไฟ</a></td>
-							<td colspan="4"><a class="transportSub" href="#">ค้นหาขบวนรถไฟจากเส้นทาง</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div id='contentData'></div>
+					<tr class='Bus'>
+						<td colspan='4'><a href='#'>ข้อมูลสายรถเมล์</a></td>
+						<td colspan='4'><a href='#'>ค้นหาสายรถเมล์จากป้าย</a></td>
+						<td colspan='4'><a href='#'>ค้นหาสายรถเมล์จากเส้นทาง</a></td>
+					</tr>
+					<tr class='Metro'>
+						<td colspan='4'><a href='#'>คำนวณเวลาและราคารถไฟฟ้า</a></td>
+						<td colspan='4'><a href='#'>ตารางความถี่รถไฟฟ้า</a></td>
+						<td colspan='4'><a href='#'>ตารางแสดงเวลารถไฟฟ้าขบวนแรก/สุดท้าย</a></td>
+					</tr>
+					<tr class='Boat'>
+						<td colspan='4'><a href='#'>คำนวณค่าโดยสารเรือ</a></td>
+						<td colspan='4'><a href='#'>ตารางแสดงเส้นทางการเดินเรือ</a></td>
+						<td colspan='4'><a href='#'>ตารางแสดงความถี่ของเรือตามช่วงเวลา</a></td>
+					</tr>
+					<tr class='Train'>
+						<td colspan='4'><a href='#'>ตารางเวลารถไฟเข้า-ออก</a></td>
+						<td colspan='4'><a href='#'>กำหนดเวลาเดินขบวนรถไฟ</a></td>
+						<td colspan='4'><a href='#'>ค้นหาขบวนรถไฟจากเส้นทาง</a></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
+	<script type='text/javascript'>
+		function openRow(type) {
+			let classElements = document.getElementsByTagName('TR');
+			for (classElement of classElements) {
+				if(classElement.classList.contains('visible')) {
+					continue;
+				}
+				classElement.style.display = 'none';
+			}
+			classElements = document.getElementsByClassName(type);
+			for (classElement of classElements) {
+				classElement.style.display = 'table-row';
+			}
+		}
+	</script>
 </html>
