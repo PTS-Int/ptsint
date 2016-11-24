@@ -8,11 +8,8 @@ $(document).ready(() => {
 
 	$('#RouteData').on('click', () => {
 		let div = '<div id="RouteSelector" class="selector">เลือกสาย <select>'
-		for (var i = 1; i < 10; i++) {
-			div += '<option value="' + i + '">' + i + '</option>'
-			if(i === 7) {
-				div += '<option value="7A">' + '7ก' + '</option>'
-			}
+		for (var i = 0; i < busDB.length; i++) {
+			div += '<option value="' + busDB[i] + '">' + busDB[i] + '</option>'
 		}
 		div += '</select></div>'
 		$('#contentData').html(div)
